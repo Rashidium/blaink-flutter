@@ -38,7 +38,7 @@ flutter pub get
 1. **Add Blaink Swift Package**:
    - Open your iOS project in Xcode
    - Go to File → Add Package Dependencies
-   - Add the Blaink Swift package from your repository
+   - Add the Blaink Swift package from: https://github.com/Rashidium/blaink-ios.git
 
 2. **Configure Firebase**:
    - Download `GoogleService-Info.plist` from Firebase Console

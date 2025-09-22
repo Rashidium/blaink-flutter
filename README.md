@@ -149,7 +149,7 @@ static void setDelegate(BlainkDelegate? delegate);
 
 ## Dependencies
 
-- **iOS**: Uses the native Blaink Swift package
+- **iOS**: Uses the native Blaink Swift package from [https://github.com/Rashidium/blaink-ios](https://github.com/Rashidium/blaink-ios)
 - **Android**: Uses the native Blaink Android SDK
 - **Firebase**: Required for push notifications
 

@@ -12,13 +12,13 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 Flutter SDK for Blaink push notification and messaging platform
                        DESC
-  s.homepage         = 'https://github.com/Rashidium/blaink-flutter'
+  s.homepage         = 'https://github.com/Rashidium/blaink-ios'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Rashidium' => 'support@blaink.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'Blaink'
+  s.dependency 'Blaink', :git => 'https://github.com/Rashidium/blaink-ios.git'
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
