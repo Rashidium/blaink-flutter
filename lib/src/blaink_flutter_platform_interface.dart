@@ -5,6 +5,7 @@
 //  Prompted by Raşid Ramazanov using Cursor on 21.09.2025.
 //
 
+import 'package:blaink_flutter/src/blaink_flutter_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'blaink_delegate.dart';
 import 'push_environment.dart';
@@ -59,6 +60,7 @@ abstract class BlainkFlutterPlatform extends PlatformInterface {
   void setDelegate(BlainkDelegate? delegate);
 }
 
+/*
 class MethodChannelBlainkFlutter extends BlainkFlutterPlatform {
   static const MethodChannel _channel = MethodChannel('blaink_flutter');
   static const EventChannel _events = EventChannel('blaink_flutter/events');
@@ -198,3 +200,4 @@ class MethodChannelBlainkFlutter extends BlainkFlutterPlatform {
     _delegate = null;
   }
 }
+*/
