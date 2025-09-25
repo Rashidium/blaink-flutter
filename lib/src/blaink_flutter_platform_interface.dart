@@ -59,6 +59,7 @@ abstract class BlainkFlutterPlatform extends PlatformInterface {
   void setDelegate(BlainkDelegate? delegate);
 }
 
+/*
 class MethodChannelBlainkFlutter extends BlainkFlutterPlatform {
   static const MethodChannel _channel = MethodChannel('blaink_flutter');
   static const EventChannel _events = EventChannel('blaink_flutter/events');
@@ -198,3 +199,4 @@ class MethodChannelBlainkFlutter extends BlainkFlutterPlatform {
     _delegate = null;
   }
 }
+*/
