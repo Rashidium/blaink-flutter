@@ -1,6 +1,6 @@
 name: blaink_flutter
 description: Flutter SDK for Blaink push notification and messaging platform
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/Rashidium/blaink-flutter
 
 environment:
