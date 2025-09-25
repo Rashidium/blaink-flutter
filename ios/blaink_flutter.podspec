@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'blaink_flutter'
-  s.version          = '1.0.9'
+  s.version          = '1.1.3'
   s.summary          = 'Flutter SDK for Blaink push notification and messaging platform'
   s.description      = <<-DESC
 Flutter SDK for Blaink push notification and messaging platform
