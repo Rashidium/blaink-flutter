@@ -70,6 +70,21 @@ flutter pub get
    ```
 
 3. **Add GitHub Packages Repository**:
+   
+   **Option A: If GitHub Packages are public (recommended)**
+   Add to `android/build.gradle`:
+   ```gradle
+   allprojects {
+     repositories {
+       maven {
+         name = "GitHubPackages"
+         url = uri("https://maven.pkg.github.com/Rashidium/blaink-android")
+       }
+     }
+   }
+   ```
+   
+   **Option B: If GitHub Packages are private**
    Add to `android/build.gradle`:
    ```gradle
    allprojects {
@@ -85,6 +100,14 @@ flutter pub get
      }
    }
    ```
+   
+   Then create `android/gradle.properties` and add:
+   ```properties
+   gpr.user=YOUR_GITHUB_USERNAME
+   gpr.key=YOUR_GITHUB_TOKEN
+   ```
+   
+   **Note**: Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with a GitHub Personal Access Token with `read:packages` permission.
 
 ## Implementation
 
@@ -288,17 +311,26 @@ flutter run -d android
 
 ### Common Issues
 
-1. **SDK Initialization Fails**:
+1. **Dependency Resolution Errors**:
+   ```
+   Could not find com.blaink:blaink:1.0.8
+   ```
+   **Solution**: 
+   - If using public GitHub Packages: Ensure the repository is configured correctly in `android/build.gradle`
+   - If using private GitHub Packages: Add authentication credentials to `android/gradle.properties`
+   - Clean and rebuild: `flutter clean && flutter pub get`
+
+2. **SDK Initialization Fails**:
    - Check if SDK key is correct
    - Verify network connectivity
    - Check debug logs for SSL pinning issues
 
-2. **Push Notifications Not Received**:
+3. **Push Notifications Not Received**:
    - Verify Firebase configuration
    - Check notification permissions
    - Ensure device token is registered
 
-3. **Build Errors**:
+4. **Build Errors**:
    - Clean and rebuild: `flutter clean && flutter pub get`
    - Check iOS/Android specific setup
    - Verify all dependencies are correctly added

@@ -22,10 +22,6 @@ allprojects {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/Rashidium/blaink-android")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-            }
         }
     }
 }
@@ -38,12 +34,12 @@ android {
     compileSdk 35
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '18'
     }
 
     sourceSets {
@@ -51,12 +47,12 @@ android {
     }
 
     defaultConfig {
-        minSdk 21
+        minSdk 25
     }
 
     dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
         // Add Blaink Android SDK dependency
-        implementation "com.blaink:blaink:1.0.8"
+        implementation "com.blaink:blaink:1.0.9"
     }
 }
