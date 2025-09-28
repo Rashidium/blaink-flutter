@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.version          = '1.1.4'
   s.summary          = 'Flutter SDK for Blaink push notification and messaging platform'
   s.description      = <<-DESC
-Flutter SDK for Blaink push notification and messaging platform
+Flutter SDK for Blaink push notification and messagin g platform
                        DESC
   s.homepage         = 'https://github.com/Rashidium/blaink-ios'
   s.license          = { :file => '../LICENSE' }

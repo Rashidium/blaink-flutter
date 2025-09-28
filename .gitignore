@@ -39,9 +39,9 @@ app.*.symbols
 app.*.map.json
 
 # Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+/example/android/app/debug
+/example/android/app/profile
+/example/android/app/release
 
 # iOS related
 **/ios/**/*.mode1v3
@@ -91,3 +91,5 @@ coverage/
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+/example/build/

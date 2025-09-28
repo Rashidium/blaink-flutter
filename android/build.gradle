@@ -2,7 +2,7 @@ group 'com.blaink.blaink_flutter'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.25'
+    ext.kotlin_version = '2.1.0'
     repositories {
         google()
         mavenCentral()
@@ -34,7 +34,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.blaink.blaink_flutter'
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.blaink.blaink_flutter'
+    }
+
     compileSdk 35
 
     compileOptions {
@@ -46,17 +49,13 @@ android {
         jvmTarget = '11'
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-
     defaultConfig {
-        minSdk 25
+        minSdk 26
     }
 
     dependencies {
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-        // Add Blaink Android SDK dependency
-        implementation "com.blaink:blaink:1.1.4"
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        // TODO: Add Blaink Android SDK dependency when available
+        // implementation "com.blaink:blaink:1.1.4"
     }
 }

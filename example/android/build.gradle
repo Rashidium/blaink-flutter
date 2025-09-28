@@ -1,0 +1,40 @@
+package example.android
+
+buildscript {
+    ext.kotlin_version = '2.1.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // START: FlutterFire Configuration
+        classpath 'com.google.gms:google-services:4.4.3'
+        // END: FlutterFire Configuration
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+         maven {
+             name = "GitHubPackages"
+             url = uri("https://maven.pkg.github.com/Rashidium/blaink-android")
+             credentials {
+                 username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+             }
+         }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
