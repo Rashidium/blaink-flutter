@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "123456789",
-    "project_id": "blaink-flutter-example",
-    "storage_bucket": "blaink-flutter-example.appspot.com"
+    "project_number": "536679988263",
+    "project_id": "flutter-blaink",
+    "storage_bucket": "flutter-blaink.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123456789:android:abc123def456",
+        "mobilesdk_app_id": "1:536679988263:android:3a69b8d4051c3977a2a202",
         "android_client_info": {
           "package_name": "com.blaink.blaink_flutter_example"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDummy-Key-For-Example-App"
+          "current_key": "AIzaSyAwdg6OSoLQxARSxkmx7aNJC6DN2XpMA9g"
         }
       ],
       "services": {
