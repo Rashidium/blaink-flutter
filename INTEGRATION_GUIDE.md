@@ -35,19 +35,24 @@ flutter pub get
 
 ### iOS Setup
 
-1. **Add Blaink Swift Package**:
-   - Open your iOS project in Xcode
-   - Go to File → Add Package Dependencies
-   - Add the Blaink Swift package from: https://github.com/Rashidium/blaink-ios.git
+1. **iOS Dependencies Handled Automatically**:
+   The Blaink iOS SDK (v1.1.7) will be automatically included when you install the Flutter plugin.
+   No additional setup required for iOS dependencies - CocoaPods will handle everything!
 
 2. **Configure Firebase**:
    - Download `GoogleService-Info.plist` from Firebase Console
-   - Add it to your iOS project in Xcode
+   - Add it to your iOS project in Xcode (drag into Runner folder)
+   - Make sure it's added to the Runner target
 
 3. **Enable Push Notifications**:
-   - In Xcode, select your target
+   - Open your iOS project: `open ios/Runner.xcworkspace`
+   - In Xcode, select your Runner target
    - Go to Signing & Capabilities
    - Add "Push Notifications" capability
+   - Add "Background Modes" capability and enable "Background fetch" and "Remote notifications"
+
+4. **Update Info.plist** (if needed):
+   - Ensure your `Info.plist` has the required permissions for notifications
 
 ### Android Setup
 
