@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'blaink_flutter'
-  s.version          = '1.1.4'
+  s.version          = '1.1.7'
   s.summary          = 'Flutter SDK for Blaink push notification and messaging platform'
   s.description      = <<-DESC
 Flutter SDK for Blaink push notification and messagin g platform
@@ -18,8 +18,7 @@ Flutter SDK for Blaink push notification and messagin g platform
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  # Note: Blaink iOS SDK should be added via Swift Package Manager
-  # See integration guide for SPM setup instructions
+  s.dependency 'Blaink', '~> 1.1.7'
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
