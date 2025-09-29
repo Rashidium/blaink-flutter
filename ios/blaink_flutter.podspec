@@ -18,7 +18,7 @@ Flutter SDK for Blaink push notification and messagin g platform
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'Blaink', :git => 'https://github.com/Rashidium/blaink-ios.git'
+  s.dependency 'Blaink'
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
