@@ -36,9 +36,8 @@ class BlainkFlutterPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Strea
         eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "blaink_flutter/events")
         eventChannel.setStreamHandler(this)
         
-        // Initialize Blaink SDK instance
-        blaink = Blaink.getInstance()
-        blaink.delegate = this
+        // Don't initialize SDK instance here - wait for setup() call
+        // This prevents singleton contamination between apps
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
@@ -60,6 +59,10 @@ class BlainkFlutterPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Strea
                         else -> PushEnvironment.PRODUCTION
                     }
                     
+                    // Initialize SDK instance with proper isolation
+                    blaink = Blaink.getInstance()
+                    blaink.delegate = this
+                    
                     blaink.setup(
                         context = context,
                         sdkKey = sdkKey,
@@ -75,6 +78,11 @@ class BlainkFlutterPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Strea
             
             "registerForRemoteNotifications" -> {
                 try {
+                    if (!::blaink.isInitialized) {
+                        result.error("SDK_NOT_INITIALIZED", "Blaink SDK not initialized. Call setup() first.", null)
+                        return
+                    }
+                    
                     val deviceToken = call.argument<String>("deviceToken")
                     if (deviceToken == null) {
                         result.error("INVALID_ARGUMENTS", "Device token is required", null)
@@ -89,6 +97,11 @@ class BlainkFlutterPlugin : FlutterPlugin, MethodCallHandler, EventChannel.Strea
             }
             
             "getCurrentUser" -> {
+                if (!::blaink.isInitialized) {
+                    result.error("SDK_NOT_INITIALIZED", "Blaink SDK not initialized. Call setup() first.", null)
+                    return
+                }
+                
                 CoroutineScope(Dispatchers.Main).launch {
                     try {
                         val userResult = blaink.getCurrentUser()
