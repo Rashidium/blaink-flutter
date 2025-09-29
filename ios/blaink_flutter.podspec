@@ -18,7 +18,8 @@ Flutter SDK for Blaink push notification and messagin g platform
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'Blaink'
+  # Note: Blaink iOS SDK should be added via Swift Package Manager
+  # See integration guide for SPM setup instructions
   s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
